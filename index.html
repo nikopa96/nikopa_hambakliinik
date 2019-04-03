@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="et">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="resources/css/style.css">
+    <title>Nikopa Hambakliinik :: Avaleht</title>
+</head>
+
+<body>
+    <div class="container">
+        <nav class="navbar navbar-expand-lg navbar-light">
+            <a class="navbar-brand" href="index.html">
+                <img class="d-none d-lg-block" src="resources/img/logo.png" width="240" alt="">
+                <img class="d-block d-lg-none" src="resources/img/logo.png" width="150" alt="">
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link nav__link--fat-text" href="booking-1.html">Broneeri</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link nav__link--fat-text" href="#">Teenused ja hinnakiri</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle nav__link--fat-text" href="#" id="about" role="button"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Kliinikust
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="about">
+                            <a class="dropdown-item" href="#">Tutvustus</a>
+                            <a class="dropdown-item" href="#">Arstid</a>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle nav__link--fat-text" href="#" id="contact" role="button"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Kontakt
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="contact">
+                            <a class="dropdown-item" href="#">Üldinfo</a>
+                            <a class="dropdown-item" href="#">Karjäär</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
+        <div class="jumbotron jumbotron-fluid d-none d-lg-block promo">
+            <div class="container promo__container">
+                <h1 class="text-light">Kvaliteetne hambaravi<br>kõigile!</h1>
+                <p class="lead promo__container__button">
+                    <a class="btn btn-main btn-lg" href="booking-1.html" role="button">Broneeri aeg siin</a>
+                </p>
+                <div>
+                    <div class="text-light">või helistage numbril:</div>
+                    <h4 class="text-light">+372 685 0001</h4>
+                </div>
+            </div>
+        </div>
+        <div class="row d-block d-lg-none promo--mobile">
+            <div class="col-md-lg promo__content--mobile">
+                <h2 class="text-light">Kvaliteetne hambaravi<br>kõigile!</h2>
+            </div>
+            <div class="col-md-lg promo__content--mobile">
+                <a class="btn btn-main btn-lg" href="booking-1.html" role="button">Broneeri aeg siin</a>
+            </div>
+            <div class="col-md-lg promo__content--mobile">
+                <div class="text-light">või helistage numbril:</div>
+                <h4 class="text-light">+372 685 0001</h4>
+            </div>
+        </div>
+
+        <h1 class="title">
+            Miks me oleme?
+        </h1>
+        <div class="card-deck">
+            <div class="card card--borderless">
+                <img class="card-img-top card__card-img-top--size-small" src="resources/img/homepage-promo-1.png"
+                    alt="">
+                <div class="card-body">
+                    <h4 class="card-title card__card-title--thin-text">Lastele</h4>
+                    <p class="card-text">Meie hambakliinik omab lepingut Haigekassaga. Lapsed kuni 18.aastat ravivad
+                        tasuta!</p>
+                </div>
+            </div>
+            <div class="card card--borderless">
+                <img class="card-img-top card__card-img-top--size-small" src="resources/img/homepage-promo-2.png"
+                    alt="">
+                <div class="card-body">
+                    <h4 class="card-title card__card-title--thin-text">Täiskasvanutele</h4>
+                    <p class="card-text">Kvaliteetne ja kiire teenindus. Võib kasutada LHV ja Liisi järelmaksu!</p>
+                </div>
+            </div>
+            <div class="card card--borderless">
+                <img class="card-img-top card__card-img-top--size-small" src="resources/img/homepage-promo-3.png"
+                    alt="">
+                <div class="card-body">
+                    <h4 class="card-title card__card-title--thin-text">Tudengitele</h4>
+                    <p class="card-text">Tudengitele ISIC-kaardi kasutamisel soodushinnad kuni 20%</p>
+                </div>
+            </div>
+        </div>
+
+        <h1 class="title">
+            Meie asukoht
+        </h1>
+        <div class="row place">
+            <div id="map" class="col-auto col-md-6 place__map"></div>
+            <div class="d-none d-sm-block col-md-6 place__text">
+                <h4 class="place__text__address place__text--thin-text">
+                    Tallinn<br>
+                    Mustamäe<br>
+                    Sõpruse pst 25a
+                </h4>
+                <h6 class="place__text--thin-text">
+                    Parkla 1h on tasuta
+                </h6>
+            </div>
+            <div class="d-block d-sm-none col-auto place__text--mobile">
+                <h4 class="place__text__address place__text--thin-text">
+                    Tallinn, Mustamäe<br>
+                    Sõpruse pst 25a
+                </h4>
+                <h6 class="place__text--thin-text">
+                    Parkla 1h on tasuta
+                </h6>
+            </div>
+        </div>
+
+        <div class="row footer">
+            <div class="col-md-4 footer__logo">
+                <img src="resources/img/logo-light.png" width="195" alt="">
+                <div>© 2019 Nikopa hambakliinik</div>
+            </div>
+            <div class="col-md-2 footer__column">
+                <h6>Broneeri</h6>
+            </div>
+            <div class="col-md-2 footer__column">
+                <h6>Teenused ja hinnakiri</h6>
+            </div>
+            <div class="col-md-2 footer__column">
+                <h6>Kliinikust</h6>
+                <a class="footer__link" href="#">Tutvustus</a>
+                <a class="footer__link" href="#">Arstid</a>
+            </div>
+            <div class="col-md-2 footer__column">
+                <h6>Kontakt</h6>
+                <a class="footer__link" href="#">Üldinfo</a>
+                <a class="footer__link" href="#">Karjäär</a>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+    <script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBFQ4TMRVb64dvOpUO2eJRs2fGO4cXMn4E&callback=initMap"></script>
+    <script src="resources/js/map.js"></script>
+</body>
+
+</html>
