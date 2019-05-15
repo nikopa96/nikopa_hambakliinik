@@ -1,0 +1,418 @@
+{
+    "services": [
+        {
+            "id": 1,
+            "type": "Konsultatsioon"
+        },
+        {
+            "id": 2,
+            "type": "Hambaravi"
+        },
+        {
+            "id": 3,
+            "type": "Hamba eemaldamine"
+        },
+        {
+            "id": 4,
+            "type": "Proteseerimine"
+        },
+        {
+            "id": 5,
+            "type": "Implantoloogia"
+        }
+    ],
+    "doctors": [
+        {
+            "id": 1,
+            "name": "Katie Cole"
+        },
+        {
+            "id": 2,
+            "name": "Winifred Miles"
+        },
+        {
+            "id": 3,
+            "name": "Julia Love"
+        },
+        {
+            "id": 4,
+            "name": "Efa Lim"
+        },
+        {
+            "id": 5,
+            "name": "Cydney Medrano"
+        },
+        {
+            "id": 6,
+            "name": "Leandro Doherty"
+        },
+        {
+            "id": 7,
+            "name": "Chantel Burns"
+        },
+        {
+            "id": 8,
+            "name": "Keeva Ryan"
+        }
+    ],
+    "servicesByDoctor": [
+        {
+            "service": {
+                "id": 1,
+                "name": "Konsultatsioon"
+            },
+            "doctor": {
+                "id": 1,
+                "name": "Katie Cole"
+            },
+            "times": [
+                "7:41",
+                "9:28"
+            ]
+        },
+        {
+            "service": {
+                "id": 1,
+                "name": "Konsultatsioon"
+            },
+            "doctor": {
+                "id": 2,
+                "name": "Winifred Miles"
+            },
+            "times": [
+                "11:44",
+                "18:40",
+                "19:22",
+                "18:36"
+            ]
+        },
+        {
+            "service": {
+                "id": 2,
+                "name": "Hambaravi"
+            },
+            "doctor": {
+                "id": 3,
+                "name": "Julia Love"
+            },
+            "times": [
+                "8:45",
+                "10:30"
+            ]
+        },
+        {
+            "service": {
+                "id": 2,
+                "name": "Hambaravi"
+            },
+            "doctor": {
+                "id": 4,
+                "name": "Efa Lim"
+            },
+            "times": [
+                "11:35"
+            ]
+        },
+        {
+            "service": {
+                "id": 3,
+                "name": "Hamba eemaldamine"
+            },
+            "doctor": {
+                "id": 4,
+                "name": "Efa Lim"
+            },
+            "times": [
+                "12:30",
+                "14:15",
+                "16:35"
+            ]
+        },
+        {
+            "service": {
+                "id": 4,
+                "name": "Proteseerimine"
+            },
+            "doctor": {
+                "id": 5,
+                "name": "Cydney Medrano"
+            },
+            "times": [
+                "8:45",
+                "11:15"
+            ]
+        },
+        {
+            "service": {
+                "id": 4,
+                "name": "Proteseerimine"
+            },
+            "doctor": {
+                "id": 6,
+                "name": "Leandro Doherty"
+            },
+            "times": [
+                "11:30"
+            ]
+        },
+        {
+            "service": {
+                "id": 4,
+                "name": "Proteseerimine"
+            },
+            "doctor": {
+                "id": 7,
+                "name": "Chantel Burns"
+            },
+            "times": [
+                "16:35"
+            ]
+        },
+        {
+            "service": {
+                "id": 5,
+                "name": "Implantoloogia"
+            },
+            "doctor": {
+                "id": 8,
+                "name": "Keeva Ryan"
+            },
+            "times": [
+                "11:00"
+            ]
+        }
+    ],
+    "servicesByTime": [
+        {
+            "interval": "7:00 - 8:00",
+            "visits": [
+                {
+                    "service": {
+                        "id": 1,
+                        "name": "Konsultatsioon"
+                    },
+                    "doctor": {
+                        "id": 1,
+                        "name": "Katie Cole"
+                    },
+                    "time": "7:41"
+                }
+            ]
+        },
+        {
+            "interval": "8:00 - 9:00",
+            "visits": [
+                {
+                    "service": {
+                        "id": 2,
+                        "name": "Hambaravi"
+                    },
+                    "doctor": {
+                        "id": 3,
+                        "name": "Julia Love"
+                    },
+                    "time": "8:45"
+                },
+                {
+                    "service": {
+                        "id": 4,
+                        "name": "Proteseerimine"
+                    },
+                    "doctor": {
+                        "id": 5,
+                        "name": "Cydney Medrano"
+                    },
+                    "time": "8:45"
+                }
+            ]
+        },
+        {
+            "interval": "9:00 - 10:00",
+            "visits": [
+                {
+                    "service": {
+                        "id": 1,
+                        "name": "Konsultatsioon"
+                    },
+                    "doctor": {
+                        "id": 1,
+                        "name": "Katie Cole"
+                    },
+                    "time": "9:28"
+                }
+            ]
+        },
+        {
+            "interval": "10:00 - 11:00",
+            "visits": [
+                {
+                    "service": {
+                        "id": 2,
+                        "name": "Hambaravi"
+                    },
+                    "doctor": {
+                        "id": 3,
+                        "name": "Julia Love"
+                    },
+                    "time": "10:30"
+                }
+            ]
+        },
+        {
+            "interval": "11:00 - 12:00",
+            "visits": [
+                {
+                    "service": {
+                        "id": 1,
+                        "name": "Konsultatsioon"
+                    },
+                    "doctor": {
+                        "id": 2,
+                        "name": "Winifred Miles"
+                    },
+                    "time": "11:44"
+                },
+                {
+                    "service": {
+                        "id": 2,
+                        "name": "Hambaravi"
+                    },
+                    "doctor": {
+                        "id": 4,
+                        "name": "Efa Lim"
+                    },
+                    "time": "11:35"
+                },
+                {
+                    "service": {
+                        "id": 4,
+                        "name": "Proteseerimine"
+                    },
+                    "doctor": {
+                        "id": 5,
+                        "name": "Cydney Medrano"
+                    },
+                    "time": "11:15"
+                },
+                {
+                    "service": {
+                        "id": 4,
+                        "name": "Proteseerimine"
+                    },
+                    "doctor": {
+                        "id": 6,
+                        "name": "Leandro Doherty"
+                    },
+                    "time": "11:30"
+                },
+                {
+                    "service": {
+                        "id": 5,
+                        "name": "Implantoloogia"
+                    },
+                    "doctor": {
+                        "id": 8,
+                        "name": "Keeva Ryan"
+                    },
+                    "time": "11:00"
+                }
+            ]
+        },
+        {
+            "interval": "12:00 - 13:00",
+            "visits": [
+                {
+                    "service": {
+                        "id": 3,
+                        "name": "Hamba eemaldamine"
+                    },
+                    "doctor": {
+                        "id": 4,
+                        "name": "Efa Lim"
+                    },
+                    "time": "12:30"
+                }
+            ]
+        },
+        {
+            "interval": "14:00 - 15:00",
+            "visits": [
+                {
+                    "service": {
+                        "id": 3,
+                        "name": "Hamba eemaldamine"
+                    },
+                    "doctor": {
+                        "id": 4,
+                        "name": "Efa Lim"
+                    },
+                    "time": "14:15"
+                }
+            ]
+        },
+        {
+            "interval": "16:00 - 17:00",
+            "visits": [
+                {
+                    "service": {
+                        "id": 3,
+                        "name": "Hamba eemaldamine"
+                    },
+                    "doctor": {
+                        "id": 4,
+                        "name": "Efa Lim"
+                    },
+                    "time": "16:35"
+                }
+            ]
+        },
+        {
+            "interval": "18:00 - 19:00",
+            "visits": [
+                {
+                    "service": {
+                        "id": 1,
+                        "name": "Konsultatsioon"
+                    },
+                    "doctor": {
+                        "id": 2,
+                        "name": "Winifred Miles"
+                    },
+                    "time": "18:36"
+                }
+            ]
+        },
+        {
+            "interval": "18:00 - 19:00",
+            "visits": [
+                {
+                    "service": {
+                        "id": 1,
+                        "name": "Konsultatsioon"
+                    },
+                    "doctor": {
+                        "id": 2,
+                        "name": "Winifred Miles"
+                    },
+                    "time": "18:40"
+                }
+            ]
+        },
+        {
+            "interval": "19:00 - 20:00",
+            "visits": [
+                {
+                    "service": {
+                        "id": 1,
+                        "name": "Konsultatsioon"
+                    },
+                    "doctor": {
+                        "id": 2,
+                        "name": "Winifred Miles"
+                    },
+                    "time": "19:22"
+                }
+            ]
+        }
+    ]
+}

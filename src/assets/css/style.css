@@ -1,3 +1,9 @@
+html { 
+  overflow-y: scroll;
+}
+#map {
+  padding: 0;
+}
 .content {
   min-height: calc(85vh);
 }
@@ -34,7 +40,7 @@
   box-shadow: none;
 }
 .promo {
-  background-image: url('../../resources/img/promo-block.jpg');
+  background-image: url('../img/promo-block.jpg');
   background-size: cover;
   background-repeat: no-repeat;
   background-position-y: center;
@@ -163,7 +169,7 @@ ul.striped-list > li:nth-of-type(odd) {
 .visits .visits__list--thin-text {
   font-weight: 400;
 }
-.sort .sort__item--active {
+.sort__item--active {
   font-weight: bold;
   color: black;
 }
