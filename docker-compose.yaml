@@ -6,6 +6,7 @@ services:
     image: postgres
     restart: always
     environment:
+      POSTGRES_DB: nikopa_hambakliinik
       POSTGRES_USER: root
       POSTGRES_PASSWORD: root
     ports:

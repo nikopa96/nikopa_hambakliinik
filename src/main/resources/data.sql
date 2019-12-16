@@ -1,3 +1,18 @@
+INSERT INTO doctor(name) VALUES ('Katie Cole');
+INSERT INTO doctor(name) VALUES ('Winifred Miles');
+INSERT INTO doctor(name) VALUES ('Julia Love');
+INSERT INTO doctor(name) VALUES ('Efa Lim');
+INSERT INTO doctor(name) VALUES ('Cydney Medrano');
+INSERT INTO doctor(name) VALUES ('Leandro Doherty');
+INSERT INTO doctor(name) VALUES ('Chantel Burns');
+INSERT INTO doctor(name) VALUES ('Keeva Ryan');
+
+INSERT INTO procedure(name) VALUES ('Konsultatsioon');
+INSERT INTO procedure(name) VALUES ('Hambaravi');
+INSERT INTO procedure(name) VALUES ('Hamba eemaldamine');
+INSERT INTO procedure(name) VALUES ('Proteseerimine');
+INSERT INTO procedure(name) VALUES ('Implantoloogia');
+
 INSERT INTO visit(doctor_id, procedure_id, time, date, interval) VALUES (1, 1, '7:41',  '2019-07-30', '7:00 - 8:00');
 INSERT INTO visit(doctor_id, procedure_id, time, date, interval) VALUES (1, 1, '9:28',  '2019-07-30', '9:00 - 10:00');
 INSERT INTO visit(doctor_id, procedure_id, time, date, interval) VALUES (2, 1, '11:44', '2019-07-30', '11:00 - 12:00');
