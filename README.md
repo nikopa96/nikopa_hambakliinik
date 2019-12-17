@@ -1,8 +1,14 @@
 # Nikopa Dental Clinic
 Portfolio project
 
-Live Demo:
-http://nikolaykopa.me/portfolio/dentalclinic/
+## To run the demo follow next steps
+### Run frontend
+1. Go to the ```/frontend``` folder
+2. Install Vue.js dependencies ```npm install```
+3. Run the frontend on the local machine ```npm run serve```
 
-Admin Panel Demo:
-http://nikolaykopa.me/portfolio/dentalclinic/#/admin/
+### Database
+* Install the database using Docker ```docker-compose up```
+
+### Run backend
+* Open this project in IntelliJ IDEA and run DemoApplication class
