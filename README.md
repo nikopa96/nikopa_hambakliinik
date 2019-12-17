@@ -12,3 +12,7 @@ Portfolio project
 
 ### Run backend
 * Open this project in IntelliJ IDEA and run DemoApplication class
+
+## Screenshot
+
+![Dental Clinic website](/screen.png)
