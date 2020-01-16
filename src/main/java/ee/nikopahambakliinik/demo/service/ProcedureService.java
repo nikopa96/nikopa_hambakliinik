@@ -2,16 +2,20 @@ package ee.nikopahambakliinik.demo.service;
 
 import ee.nikopahambakliinik.demo.model.Procedure;
 import ee.nikopahambakliinik.demo.repository.ProcedureRepository;
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.NonNull;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
+@RequiredArgsConstructor
 public class ProcedureService {
 
-    @Autowired
+    @NonNull
     private ProcedureRepository procedureRepository;
 
-    public Iterable<Procedure> getAllProcedures() {
+    public List<Procedure> getAllProcedures() {
         return procedureRepository.findAll();
     }
 }
