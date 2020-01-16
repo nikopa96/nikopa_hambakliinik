@@ -2,28 +2,31 @@ package ee.nikopahambakliinik.demo.controller;
 
 import ee.nikopahambakliinik.demo.model.Visit;
 import ee.nikopahambakliinik.demo.service.VisitService;
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.NonNull;
+import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
 import java.util.Optional;
 
 @RestController
 @RequestMapping(path = "visits")
+@RequiredArgsConstructor
 public class VisitController {
 
-    @Autowired
+    @NonNull
     private VisitService visitService;
 
     @GetMapping(path = "/getall")
     @CrossOrigin
-    public Iterable<Visit> getAllVisits() {
+    public List<Visit> getAllVisits() {
         return visitService.getAllVisits();
     }
 
     @GetMapping(path = "/getallbyid")
     @CrossOrigin
-    public Iterable<Visit> getAllVisitsOrderById() {
-        return visitService.getAllVisitsOrderById();
+    public List<Visit> getAllVisitsOrderByIdDesc() {
+        return visitService.getAllVisitsOrderByIdDesc();
     }
 
     @GetMapping(path = "get/{id}")
@@ -40,8 +43,8 @@ public class VisitController {
 
     @PutMapping(path = "update/{id}")
     @CrossOrigin
-    public void updateVisit(@PathVariable("id") Long id, @RequestBody Visit visit) {
-        visitService.updateVisit(id, visit);
+    public Visit updateVisit(@PathVariable("id") Long id, @RequestBody Visit visit) {
+        return visitService.updateVisit(id, visit);
     }
 
     @DeleteMapping(path = "delete/{id}")
@@ -49,5 +52,4 @@ public class VisitController {
     public void deleteVisit(@PathVariable("id") Long id) {
         visitService.deleteVisit(id);
     }
-
 }

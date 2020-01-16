@@ -1,24 +1,26 @@
 package ee.nikopahambakliinik.demo.model;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
-import lombok.Getter;
-import lombok.Setter;
-import org.springframework.format.annotation.DateTimeFormat;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
-import java.time.LocalDate;
-import java.time.LocalTime;
+import javax.validation.constraints.Pattern;
+import java.util.Date;
 
 @Entity
-@Table(name = "visit")
-@Setter
-@Getter
+@Table(name = "visit", schema = "nikopa_dental_clinic")
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
 public class Visit {
 
     @Id
     @Column(name = "visit_id")
-    @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @ManyToOne
@@ -30,18 +32,19 @@ public class Visit {
     private Procedure procedure;
 
     @NotNull
-    @Column(name = "time")
-    @DateTimeFormat(pattern = "HH:mm")
-    @JsonFormat(pattern = "HH:mm")
-    private LocalTime time;
-
-    @NotNull
-    @Column(name = "date")
-    @DateTimeFormat(pattern = "dd.MM.yyyy")
+    @Temporal(TemporalType.DATE)
+    @Column(name = "date", insertable = false)
     @JsonFormat(pattern = "dd.MM.yyyy")
-    private LocalDate date;
+    private Date date;
 
     @NotNull
+    @Temporal(TemporalType.TIME)
+    @Column(name = "time", insertable = false)
+    @JsonFormat(pattern = "HH:mm")
+    private Date time;
+
+    @NotNull
+    @Pattern(regexp = "^[0-2]?\\d[:]\\d\\d\\s[-]\\s[0-2]?\\d[:]\\d\\d*$")
     @Column(name = "interval")
     private String interval;
 

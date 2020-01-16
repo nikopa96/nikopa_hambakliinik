@@ -2,22 +2,25 @@ package ee.nikopahambakliinik.demo.service;
 
 import ee.nikopahambakliinik.demo.model.Visit;
 import ee.nikopahambakliinik.demo.repository.VisitRepository;
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.NonNull;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
 import java.util.Optional;
 
 @Service
+@RequiredArgsConstructor
 public class VisitService {
 
-    @Autowired
+    @NonNull
     private VisitRepository visitRepository;
 
-    public Iterable<Visit> getAllVisits() {
+    public List<Visit> getAllVisits() {
         return visitRepository.findByIsBookedFalseOrderByTimeAsc();
     }
 
-    public Iterable<Visit> getAllVisitsOrderById() {
+    public List<Visit> getAllVisitsOrderByIdDesc() {
         return visitRepository.findAllByOrderByIdDesc();
     }
 
@@ -30,19 +33,23 @@ public class VisitService {
         return visit;
     }
 
-    public void updateVisit(Long visitId, Visit newVisit) {
+    public Visit updateVisit(Long visitId, Visit newVisit) {
         Optional<Visit> requestedVisit = visitRepository.findById(visitId);
 
         if (requestedVisit.isPresent()) {
             Visit visit = requestedVisit.get();
             visit.setDoctor(newVisit.getDoctor());
             visit.setProcedure(newVisit.getProcedure());
+            visit.setDate(newVisit.getDate());
             visit.setTime(newVisit.getTime());
+            visit.setInterval(newVisit.getInterval());
             visit.setIsActive(newVisit.getIsActive());
             visit.setIsBooked(newVisit.getIsBooked());
 
-            visitRepository.save(visit);
+            return visitRepository.save(visit);
         }
+
+        return null;
     }
 
     public void deleteVisit(Long visitId) {
