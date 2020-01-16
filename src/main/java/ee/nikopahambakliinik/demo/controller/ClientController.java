@@ -2,22 +2,25 @@ package ee.nikopahambakliinik.demo.controller;
 
 import ee.nikopahambakliinik.demo.model.Client;
 import ee.nikopahambakliinik.demo.service.ClientService;
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.NonNull;
+import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
+import java.util.List;
 import java.util.Optional;
 
 @RestController
 @RequestMapping(path = "clients")
+@RequiredArgsConstructor
 public class ClientController {
 
-    @Autowired
+    @NonNull
     private ClientService clientService;
 
     @GetMapping(path = "/getall")
     @CrossOrigin
-    public Iterable<Client> getAllClients() {
+    public List<Client> getAllClients() {
         return clientService.getAllClients();
     }
 
