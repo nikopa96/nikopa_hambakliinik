@@ -6,6 +6,7 @@ import lombok.NonNull;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
 import java.util.List;
 import java.util.Optional;
 
@@ -37,13 +38,13 @@ public class VisitController {
 
     @PostMapping(path = "add")
     @CrossOrigin
-    public Visit addVisit(@RequestBody Visit visit) {
+    public Visit addVisit(@RequestBody @Valid Visit visit) {
         return visitService.addVisit(visit);
     }
 
     @PutMapping(path = "update/{id}")
     @CrossOrigin
-    public Visit updateVisit(@PathVariable("id") Long id, @RequestBody Visit visit) {
+    public Visit updateVisit(@PathVariable("id") Long id, @RequestBody @Valid Visit visit) {
         return visitService.updateVisit(id, visit);
     }
 

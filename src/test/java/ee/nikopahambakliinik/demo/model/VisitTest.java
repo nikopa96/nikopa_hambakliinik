@@ -13,8 +13,9 @@ import javax.validation.Validation;
 import javax.validation.Validator;
 import javax.validation.ValidatorFactory;
 import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.Date;
+import java.time.LocalDate;
+import java.time.LocalTime;
+import java.time.format.DateTimeFormatter;
 import java.util.Set;
 
 import static org.junit.Assert.assertEquals;
@@ -23,15 +24,15 @@ import static org.junit.Assert.assertEquals;
 @SpringBootTest
 public class VisitTest {
 
-    private SimpleDateFormat dateFormat;
-    private SimpleDateFormat timeFormat;
+    private DateTimeFormatter dateFormat;
+    private DateTimeFormatter timeFormat;
     private static ValidatorFactory validatorFactory;
     private static Validator validator;
 
     @Before
-    public void setUp() throws ParseException {
-        this.dateFormat = new SimpleDateFormat("dd.MM.yyyy");
-        this.timeFormat = new SimpleDateFormat("HH:mm");
+    public void setUp() {
+        this.dateFormat = DateTimeFormatter.ofPattern("dd.MM.yyyy");
+        this.timeFormat = DateTimeFormatter.ofPattern("HH:mm");
     }
 
     @BeforeClass
@@ -41,13 +42,13 @@ public class VisitTest {
     }
 
     @Test
-    public void shouldNotAcceptNullsOrEmptyStrings() throws ParseException {
+    public void shouldNotAcceptNullsOrEmptyStrings() {
         Visit visit1 = new Visit(3L, null, null, null, null, null,
                 null, null);
         Visit visit2 = new Visit(2L, null, null, null, null, "",
                 true, false);
-        Visit visit3 = new Visit(1L, null, null, dateFormat.parse("30.07.2019"),
-                timeFormat.parse("18:40"), "18:00 - 19:00", true, false);
+        Visit visit3 = new Visit(1L, null, null, LocalDate.parse("30.07.2019", dateFormat),
+                LocalTime.parse("18:40", timeFormat), "18:00 - 19:00", true, false);
 
         Set<ConstraintViolation<Visit>> violations1 = validator.validate(visit1);
         Set<ConstraintViolation<Visit>> violations2 = validator.validate(visit2);
@@ -59,9 +60,9 @@ public class VisitTest {
     }
 
     @Test
-    public void shouldNotAcceptWrongPatterns() throws ParseException {
-        Date date = dateFormat.parse("30.07.2019");
-        Date time = timeFormat.parse("18:40");
+    public void shouldNotAcceptWrongPatterns() {
+        LocalDate date = LocalDate.parse("30.07.2019", dateFormat);
+        LocalTime time = LocalTime.parse("18:40", timeFormat);
 
         Visit visit1 = new Visit(1L, null, null, date, time, "18:00-19:00",
                 true, false);

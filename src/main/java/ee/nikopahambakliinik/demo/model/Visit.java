@@ -4,12 +4,14 @@ import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.*;
-import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Pattern;
-import java.util.Date;
+import javax.validation.constraints.Size;
+import java.time.LocalDate;
+import java.time.LocalTime;
 
 @Entity
 @Table(name = "visit", schema = "nikopa_dental_clinic")
@@ -32,16 +34,16 @@ public class Visit {
     private Procedure procedure;
 
     @NotNull
-    @Temporal(TemporalType.DATE)
-    @Column(name = "date", insertable = false)
+    @Column(name = "date")
+    @DateTimeFormat(pattern = "dd.MM.yyyy")
     @JsonFormat(pattern = "dd.MM.yyyy")
-    private Date date;
+    private LocalDate date;
 
     @NotNull
-    @Temporal(TemporalType.TIME)
-    @Column(name = "time", insertable = false)
+    @Column(name = "time")
+    @DateTimeFormat(pattern = "HH:mm")
     @JsonFormat(pattern = "HH:mm")
-    private Date time;
+    private LocalTime time;
 
     @NotNull
     @Pattern(regexp = "^[0-2]?\\d[:]\\d\\d\\s[-]\\s[0-2]?\\d[:]\\d\\d*$")

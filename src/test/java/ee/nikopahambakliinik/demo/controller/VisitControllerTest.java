@@ -10,8 +10,9 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.test.context.junit4.SpringRunner;
 
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
+import java.time.LocalDate;
+import java.time.LocalTime;
+import java.time.format.DateTimeFormatter;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Optional;
@@ -30,20 +31,20 @@ public class VisitControllerTest {
     private VisitRepository visitRepository;
 
     private List<Visit> visits;
-    private SimpleDateFormat dateFormat;
-    private SimpleDateFormat timeFormat;
+    private DateTimeFormatter dateFormat;
+    private DateTimeFormatter timeFormat;
 
     @Before
-    public void setUp() throws ParseException {
-        this.dateFormat = new SimpleDateFormat("dd.MM.yyyy");
-        this.timeFormat = new SimpleDateFormat("HH:mm");
+    public void setUp() {
+        this.dateFormat = DateTimeFormatter.ofPattern("dd.MM.yyyy");
+        this.timeFormat = DateTimeFormatter.ofPattern("HH:mm");
 
-        Visit visit1 = new Visit(3L, null, null, timeFormat.parse("11:00"),
-                dateFormat.parse("30.07.2019"), "11:00 - 12:00", true, false);
-        Visit visit2 = new Visit(2L, null, null, timeFormat.parse("16:35"),
-                dateFormat.parse("30.07.2019"), "16:00 - 17:00", true, false);
-        Visit visit3 = new Visit(1L, null, null, timeFormat.parse("18:40"),
-                dateFormat.parse("30.07.2019"), "18:00 - 19:00", true, false);
+        Visit visit1 = new Visit(3L, null, null, LocalDate.parse("30.07.2019", dateFormat),
+                LocalTime.parse("11:00", timeFormat), "11:00 - 12:00", true, false);
+        Visit visit2 = new Visit(2L, null, null, LocalDate.parse("30.07.2019", dateFormat),
+                LocalTime.parse("16:35", timeFormat), "16:00 - 17:00", true, false);
+        Visit visit3 = new Visit(1L, null, null, LocalDate.parse("30.07.2019", dateFormat),
+                LocalTime.parse("18:40", timeFormat), "18:00 - 19:00", true, false);
 
         this.visits = Arrays.asList(visit1, visit2, visit3);
     }
@@ -70,9 +71,9 @@ public class VisitControllerTest {
     }
 
     @Test
-    public void addVisit() throws ParseException {
-        Visit newVisit = new Visit(5L, null, null, timeFormat.parse("18:15"),
-                dateFormat.parse("30.07.2019"), "18:00 - 19:00", true, false);
+    public void addVisit() {
+        Visit newVisit = new Visit(5L, null, null, LocalDate.parse("30.07.2019", dateFormat),
+                LocalTime.parse("18:15", timeFormat), "18:00 - 19:00", true, false);
         Visit savedVisit = visitController.addVisit(newVisit);
 
         verify(visitRepository, times(1)).save(newVisit);
@@ -80,10 +81,10 @@ public class VisitControllerTest {
     }
 
     @Test
-    public void updateVisit() throws ParseException {
+    public void updateVisit() {
         Visit oldVisit = visits.get(0);
-        Visit newVisit = new Visit(3L, null, null, dateFormat.parse("30.07.2019"),
-                timeFormat.parse("16:30"), "16:00 - 17:00", true, true);
+        Visit newVisit = new Visit(3L, null, null, LocalDate.parse("30.07.2019", dateFormat),
+                LocalTime.parse("16:30", timeFormat), "16:00 - 17:00", true, true);
 
         when(visitRepository.findById(3L)).thenReturn(Optional.of(oldVisit));
         Visit updatedVisit = visitController.updateVisit(3L, newVisit);

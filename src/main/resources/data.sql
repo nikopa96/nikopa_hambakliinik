@@ -31,6 +31,10 @@ INSERT INTO nikopa_dental_clinic.procedure(name, additional_fields)
      '{"name": "Supra-construction", "value": "400€"}, {"name": "Crown on an implant", "value": "130€"}]}')::jsonb);
 
 INSERT INTO nikopa_dental_clinic.visit(doctor_id, procedure_id, time, date, interval)
+    VALUES (4, 1, '13:41',  '2019-07-29', '13:00 - 14:00');
+INSERT INTO nikopa_dental_clinic.visit(doctor_id, procedure_id, time, date, interval)
+    VALUES (5, 2, '16:15',  '2019-07-29', '16:00 - 17:00');
+INSERT INTO nikopa_dental_clinic.visit(doctor_id, procedure_id, time, date, interval)
     VALUES (1, 1, '7:41',  '2019-07-30', '7:00 - 8:00');
 INSERT INTO nikopa_dental_clinic.visit(doctor_id, procedure_id, time, date, interval)
     VALUES (1, 1, '9:28',  '2019-07-30', '9:00 - 10:00');
