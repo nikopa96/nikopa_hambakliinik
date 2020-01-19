@@ -35,7 +35,7 @@ public class Client {
     private String surname;
 
     @NotEmpty
-    @Size(max = 60)
+    @Size(max = 50)
     @Pattern(regexp = "^[+]*[(]?[+]?[0-9]*[)]?[-\\s\\d]*$")
     @Column(name = "telephone")
     private String telephone;

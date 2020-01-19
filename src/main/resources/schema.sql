@@ -4,7 +4,7 @@ CREATE SCHEMA IF NOT EXISTS nikopa_dental_clinic;
 CREATE TABLE nikopa_dental_clinic.doctor (
   doctor_id SERIAL NOT NULL,
   name VARCHAR (255) NOT NULL,
-  telephone VARCHAR (15) NOT NULL,
+  telephone VARCHAR (50) NOT NULL,
   email VARCHAR (255) NOT NULL,
   photo_url VARCHAR (50),
   additional_fields JSONB,
@@ -41,13 +41,14 @@ CREATE TABLE nikopa_dental_clinic.client (
   client_id BIGSERIAL NOT NULL,
   name VARCHAR (255) NOT NULL,
   surname VARCHAR (255) NOT NULL,
-  telephone VARCHAR (60) NOT NULL,
+  telephone VARCHAR (50) NOT NULL,
   email VARCHAR (255) NOT NULL,
-  visit_id BIGINT NOT NULL UNIQUE,
+  visit_id BIGINT NOT NULL,
   connection_type VARCHAR(5) NOT NULL,
   CONSTRAINT pk_client_id PRIMARY KEY (client_id),
   CONSTRAINT fk_client_visit_id FOREIGN KEY (visit_id) REFERENCES nikopa_dental_clinic.visit(visit_id)
     ON UPDATE CASCADE ON DELETE NO ACTION,
+  CONSTRAINT uq_visit_id UNIQUE (visit_id),
   CONSTRAINT chk_client_telephone_is_valid CHECK (telephone ~* '^[+]*[(]?[+]?[0-9]*[)]?[-\s\d]*$'),
   CONSTRAINT chk_client_email_is_valid CHECK (email ~* '^([a-z0-9_\-\.]+)@([a-z0-9_\-\.]+)\.([a-z]{2,5})$')
 );
