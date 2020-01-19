@@ -16,3 +16,7 @@ Portfolio project
 ## Screenshot
 
 ![Dental Clinic website](/screen.png)
+
+## Database schema/Data Model
+
+![Database schema](/database_schema.png)
